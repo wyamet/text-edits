@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const WebpackPwaManifest = require("webpack-pwa-manifest");
 const path = require("path");
-const { InjectManifest } = require("workbox-webpack-plugin");
+const { GenerateSW, InjectManifest } = require("workbox-webpack-plugin");
 
 module.exports = () => {
   return {
@@ -26,28 +26,38 @@ module.exports = () => {
         filename: "install.html",
       }),
       new WebpackPwaManifest({
-        name: "My Progressive Web App",
-        short_name: "MyPWA",
-        description: "My awesome Progressive Web App!",
+        name: "My PWA App",
+        short_name: "PWA App",
+        description: "My awesome PWA app!",
+        start_url: "/",
         background_color: "#ffffff",
-        theme_color: "#2196f3",
+        theme_color: "#317EFB",
         icons: [
           {
-            src: path.resolve("./src/assets/icon.png"),
+            src: path.resolve("src/images/icon.png"),
             sizes: [96, 128, 192, 256, 384, 512],
-            purpose: "maskable any",
+            purpose: "any maskable",
           },
         ],
+        display: "standalone",
+        crossorigin: "use-credentials",
+      }),
+      new GenerateSW({
+        swDest: "service-worker.js",
+        clientsClaim: true,
+        skipWaiting: true,
       }),
       new InjectManifest({
-        swSrc: "./src/js/sw.js",
-        swDest: "sw.js",
+        swSrc: "./src/sw.js",
+        swDest: "service-worker.js",
+        exclude: [/\.map$/, /manifest\.json$/],
       }),
     ],
+
     module: {
       rules: [
         {
-          test: /\.css$/,
+          test: /\.css$/i,
           use: ["style-loader", "css-loader"],
         },
         {
