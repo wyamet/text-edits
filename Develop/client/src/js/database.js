@@ -11,13 +11,12 @@ const initdb = async () =>
       console.log("jate database created");
     },
   });
-
 // Method to add content to the database
 export const putDb = async (content) => {
   const db = await initdb();
   const tx = db.transaction("jate", "readwrite");
   const store = tx.objectStore("jate");
-  await store.add(content);
+  await store.put(content);
   await tx.done;
 };
 

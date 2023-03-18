@@ -16,25 +16,21 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: "./src/index.html",
+        template: "./index.html",
         chunks: ["main"],
         filename: "index.html",
       }),
-      new HtmlWebpackPlugin({
-        template: "./src/install.html",
-        chunks: ["install"],
-        filename: "install.html",
-      }),
       new WebpackPwaManifest({
-        name: "My PWA App",
-        short_name: "PWA App",
-        description: "My awesome PWA app!",
+        name: "Text-edits",
+        short_name: "JATE",
+        description: "just another text editor!",
         start_url: "/",
+        publicPath: "/",
         background_color: "#ffffff",
         theme_color: "#317EFB",
         icons: [
           {
-            src: path.resolve("src/images/icon.png"),
+            src: path.resolve("src/images/logo.png"),
             sizes: [96, 128, 192, 256, 384, 512],
             purpose: "any maskable",
           },
@@ -48,9 +44,8 @@ module.exports = () => {
         skipWaiting: true,
       }),
       new InjectManifest({
-        swSrc: "./src/sw.js",
-        swDest: "service-worker.js",
-        exclude: [/\.map$/, /manifest\.json$/],
+        swSrc: "./src-sw.js",
+        swDest: "src-sw.js",
       }),
     ],
 
