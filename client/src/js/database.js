@@ -1,5 +1,5 @@
 // Import openDB method from the 'idb' library
-import { openDB } from "idb";
+import { openDB, deleteDB, putDb, wrap, unwrap } from "idb";
 
 // Define a function to initialize the database
 const initdb = async () => {
