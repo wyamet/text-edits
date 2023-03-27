@@ -1,13 +1,13 @@
 # text Edits
 
+![JS](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+![heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
+
 ## Description
 
-Just another text editor. This application was built for our introduction to Progressive web apps. 
+Just another text editor. This application was built for our introduction to Progressive web apps.
 It is able to be downloaded and run on local.
-
-
-
-
 
 If your README is long, add a table of contents to make it easy for users to find what they need.
 
@@ -19,26 +19,18 @@ If your README is long, add a table of contents to make it easy for users to fin
 ## Installation
 
 Visit the Url and click install to have the application locally.
+
 ## Usage
 
-
-
-    ![alt text](assets/images/screenshot.png)
-
-
-## Credits
-
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
+![alt text](/client/src/images/jate1.png)
+![alt text](/client/src/images/jate2.png)
+![alt text](/client/src/images/jate3.png)
 
 ## License
 
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
----
+## See file LICENSE for details.
 
 🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
 
